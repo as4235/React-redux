@@ -1,6 +1,9 @@
 /* Slice is a database where we store the value */
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
+/* Thunk is a middleware to interact with external API. 
+Reducers update the state with the data got from the thunk function */
+
 export const getTodosAsync = createAsyncThunk(
   "todos/getTodosAsync",
   async () => {
@@ -63,9 +66,9 @@ export const deleteTodoAsync = createAsyncThunk(
 );
 
 const todoSlice = createSlice({
-  name: "todos",
-  initialState: [] /* Reducer contains the functions */,
-  reducers: {
+  name: "todos", /* Creating a centralized state called todos */
+  initialState: [], /* just like setting default in useState */
+  reducers: { /* Reducer contains the functions */
     addTodo: (state, action) => {
       state.push({
         id: Date.now(),
