@@ -68,7 +68,7 @@ export const deleteTodoAsync = createAsyncThunk(
 const todoSlice = createSlice({
   name: "todos", /* Creating a centralized state called todos */
   initialState: [], /* just like setting default in useState */
-  reducers: { /* Reducer contains the functions */
+  reducers: { /* Reducer updates the state */
     addTodo: (state, action) => {
       state.push({
         id: Date.now(),
